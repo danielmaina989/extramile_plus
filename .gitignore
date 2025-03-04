@@ -1,0 +1,18 @@
+ECHO is on.
+# Ignore the virtual environment
+miles/
+
+# Ignore Python compiled files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore Django database
+db.sqlite3
+
+# Ignore environment settings
+.env
+
+# Ignore VS Code settings (optional)
+.vscode/
