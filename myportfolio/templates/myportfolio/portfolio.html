@@ -1,8 +1,41 @@
 {% extends 'base.html' %}
+{%load static%}
+
+{% block title %}Portfolio - My Work{% endblock %}
 
 {% block main_content %}
-<div class="container mt-5">
-    <h1>Our Portfolio</h1>
-    <p>Check out some of our amazing projects!</p>
+<div class="container text-center mt-5">
+    <h1>My Portfolio</h1>
+    <p class="lead">A collection of projects that showcase my skills and expertise in web development and IT solutions.</p>
+
+    <div class="row mt-4">
+        <div class="col-md-4">
+            <div class="card">
+                <img src="{% static 'myportfolio/images/project1.jpg' %}" class="card-img-top" alt="Project 1">
+                <div class="card-body">
+                    <h5 class="card-title">E-commerce Website</h5>
+                    <p class="card-text">Developed a scalable online store with integrated payment systems.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img src="{% static 'myportfolio/images/project2.jpg' %}" class="card-img-top" alt="Project 2">
+                <div class="card-body">
+                    <h5 class="card-title">Business Automation System</h5>
+                    <p class="card-text">Built a CRM system to streamline customer interactions and boost sales.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img src="{% static 'myportfolio/images/project3.jpg' %}" class="card-img-top" alt="Project 3">
+                <div class="card-body">
+                    <h5 class="card-title">Custom Web Application</h5>
+                    <p class="card-text">Developed a custom solution to improve workflow efficiency.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}

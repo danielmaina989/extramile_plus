@@ -1,8 +1,33 @@
 {% extends 'base.html' %}
 
+{% block title %}Contact - Get in Touch{% endblock %}
+
 {% block main_content %}
 <div class="container mt-5">
-    <h1>Contact Us</h1>
-    <p>Get in touch with us for collaboration and inquiries.</p>
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="contact-card p-4 rounded shadow-lg bg-light">
+                <h1 class="text-center text-dark fw-bold">Contact Me</h1>
+                <p class="text-center text-muted">Let's discuss how we can grow your business using IT solutions.</p>
+
+                <form class="mt-4" method="post">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="name" class="form-label fw-semibold">Your Name</label>
+                        <input type="text" class="form-control border-dark" id="name" name="name" placeholder="Enter your name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label fw-semibold">Your Email</label>
+                        <input type="email" class="form-control border-dark" id="email" name="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label fw-semibold">Your Message</label>
+                        <textarea class="form-control border-dark" id="message" name="message" rows="4" placeholder="Write your message here..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-dark w-100 fw-bold">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}

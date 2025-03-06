@@ -1,8 +1,33 @@
 {% extends 'base.html' %}
 
+{% block title %}About Me - IT Solutions{% endblock %}
+
 {% block main_content %}
 <div class="container mt-5">
-    <h1>About Us</h1>
-    <p>We are a team dedicated to providing top-notch solutions.</p>
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <div class="about-card p-4 rounded shadow-lg bg-light text-center">
+                <h1 class="fw-bold text-dark">About Me</h1>
+                <p class="lead text-muted">
+                    I am a web developer and IT consultant dedicated to helping businesses scale their profits through innovative digital solutions.
+                </p>
+                
+                <div class="row mt-4 text-start">
+                    <div class="col-md-6">
+                        <h3 class="fw-bold text-dark">Who I Am</h3>
+                        <p class="text-muted">
+                            I specialize in web development, e-commerce solutions, and business automation to streamline operations and increase revenue.
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                        <h3 class="fw-bold text-dark">My Mission</h3>
+                        <p class="text-muted">
+                            Helping businesses leverage technology to achieve sustainable growth and efficiency.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}
