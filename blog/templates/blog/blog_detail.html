@@ -1,12 +1,51 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}{{ post.title }}{% endblock %}
 
 {% block main_content %}
 <div class="container mt-5">
-    <h1 class="fw-bold">{{ post.title }}</h1>
-    <p class="text-muted">By {{ post.author }} | {{ post.created_at|date:"F j, Y" }}</p>
-    <hr>
-    <p>{{ post.content }}</p>
+    <div class="card shadow-lg p-4">
+        <!-- Post Title -->
+        <h1 class="text-center text-primary fw-bold">{{ post.title }}</h1>
+        <p class="text-muted text-center">
+            🖊️ By <strong>{{ post.author }}</strong> | 📅 {{ post.created_at|date:"F j, Y" }}
+        </p>
+
+        <!-- Blog Content -->
+        <div class="content mt-4">
+            <p class="lead">{{ post.content }}</p>
+        </div>
+
+        <!-- Back to Blog Button -->
+        <div class="text-center mt-4">
+            <a href="{% url 'blog:blog_list' %}" class="btn btn-outline-primary">
+                ⬅️ Back to Blog
+            </a>
+        </div>
+
+        <!-- Admin Options: Edit & Delete -->
+        {% if request.user.is_staff %}
+        <div class="text-center mt-4">
+            <a href="{% url 'blog:post_update' post.slug %}" class="btn btn-warning me-2">
+                ✏️ Edit
+            </a>
+
+            <!-- Delete Button (Triggers SweetAlert) -->
+            <button type="button" id="delete-btn" class="btn btn-danger">
+                🗑️ Delete
+            </button>
+
+            <!-- Hidden Delete Form -->
+            <form id="delete-form" method="post" action="{% url 'blog:post_delete' post.slug %}" style="display: none;">
+                {% csrf_token %}
+            </form>
+        </div>
+        {% endif %}
+    </div>
 </div>
+
+<!-- Load SweetAlert and External JS -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="{% static 'blog/js/delete_post.js' %}"></script>
 {% endblock %}

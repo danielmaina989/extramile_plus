@@ -118,8 +118,17 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
+STATICFILES_DIRS = [
+    BASE_DIR / "blog/static",
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# custom Login
+LOGIN_REDIRECT_URL = '/blog/'  # Redirect users to the blog list page after login
+LOGOUT_REDIRECT_URL = 'blog:blog_list'
+

@@ -100,3 +100,18 @@ body {
     font-size: 1.1rem;
     color: #6c757d;
 }
+
+.btn-warning:hover {
+    background-color: #d39e00;
+    border-color: #c69500;
+}
+
+.btn-danger:hover {
+    background-color: #b52b27;
+    border-color: #a71c19;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+    border-color: #545b62;
+}
